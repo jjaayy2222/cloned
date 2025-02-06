@@ -1,9 +1,12 @@
+<!-- app/templates/app/create_post.html -->
+{% load crispy_forms_tags %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Send Email</title>
+<title>📬 Send Email 📬</title>
 <!-- Bootstrap CSS 링크 추가 (필요 시) -->
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 <style>
@@ -23,7 +26,7 @@
 </nav>
 <div class="container">
     <div class="close-button" onclick="window.close()">×</div>
-    <h2>Send Email</h2>
+    <h2>📤 Send Email 📤</h2>
     <!-- 메시지 출력 부분 -->
     {% if messages %}
     <div class="alert alert-info">

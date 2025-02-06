@@ -66,6 +66,8 @@ INSTALLED_APPS = [
     # third party apps
     "django_bootstrap5",
     "corsheaders",
+    'crispy_forms',
+    'crispy_bootstrap5',
     # custom apps
     "app",
     "accounts",
@@ -106,6 +108,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "team6.wsgi.application"
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 
 # Database
