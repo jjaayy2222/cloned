@@ -66,15 +66,12 @@ INSTALLED_APPS = [
     # third party apps
     "django_bootstrap5",
     "corsheaders",
-    'crispy_forms',
-    'crispy_bootstrap5',
     # custom apps
     "app",
     "accounts",
     "ai_playground",
     "artwork",
     "config",
-    "email_app",
 ]
 
 MIDDLEWARE = [
@@ -94,7 +91,7 @@ ROOT_URLCONF = "team6.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR, 'templates')],
+        "DIRS": [],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -108,9 +105,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "team6.wsgi.application"
-
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 
 # Database
@@ -154,13 +148,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Email Configuration (이메일 설정)
-EMAIL_HOST = os.getenv("EMAIL_HOST", "smtp.naver.com")
-EMAIL_PORT = int(os.getenv("EMAIL_PORT", 587))
-EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS", "True") == "True"
-EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
-DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", EMAIL_HOST_USER)
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
@@ -218,8 +205,8 @@ MEDIA_URL = f"https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINE
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 LOGIN_URL = "/accounts/login/"
-LOGIN_REDIRECT_URL = "/"
-LOGOUT_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "/app/"
+LOGOUT_REDIRECT_URL = "/app/"
 
 # LOGGING = {
 #     "version": 1,
